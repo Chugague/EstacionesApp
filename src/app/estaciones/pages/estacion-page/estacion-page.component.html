@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <h1 class="mb-4">Datos de la Estación</h1>
+  <!-- Tarjeta para mostrar los detalles de la estación -->
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title">Nombre de la Estación</h3>
+      <h3><strong>Radio {{estacion?.nombre}}</strong></h3>
+      <p class="card-text"><strong>Id:</strong> {{estacion?.id}}
+        <br>
+      <span class="ml-3"><strong>Frecuencia: </strong> {{estacion?.frecuencia}}</span>
+      </p>
+      <p *ngIf="estacion?.premium; else noSuscripcion" class="card-text">
+        <strong>Suscripción Premium: </strong>Sí
+        <br>
+        <span class="ml-3"><strong>Fecha de suscripción</strong> {{estacion?.fecha}}</span>
+      </p>
+      <ng-template #noSuscripcion>
+        <p class="card-text"> <strong>Suscripción Premium:</strong>  No </p>
+      </ng-template>
+      <p class="card-text"> <strong>Valoración:</strong>  {{estacion?.valoracion}}/5</p>
+      <!-- Botón para regresar -->
+      <button
+        class="btn btn-primary"
+        [routerLink]="['/estaciones']">
+        Regresar
+        <i class="fas fa-arrow-left"></i
+
+      >
+
+      </button>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,15 @@
+<h1>
+  Estaciones registradas
+</h1>
+
+<div class="row mb-5">
+
+  <div
+    *ngFor="let estacion of estaciones"
+    class="col-12 col-sm-6 col-lg-4 mb-5">
+    <estacion-tarjeta [estacion]="estacion"></estacion-tarjeta>
+  </div>
+</div>
+
+
+

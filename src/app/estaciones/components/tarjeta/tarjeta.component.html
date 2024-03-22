@@ -1,0 +1,38 @@
+<div class="card h-100" style="width: 18rem;">
+  <img [src]="estacion | ImagenEstacion" class="card-img-top img-fluid" [alt]="estacion.nombre">
+  <div class="card-body">
+    <h3 class="card-title"><strong>Radio {{estacion.nombre}}</strong></h3>
+    <p class="card-text"><strong>Frecuencia: </strong>{{estacion.frecuencia}}</p>
+    <p class="card-text"><strong> Suscripcion Premium: </strong>{{estacion.premium ? 'Si' : 'No'}}</p>
+    <p class="card-text"><strong>Valoracion: </strong>{{estacion.valoracion}}</p>
+
+    <mat-card-actions>
+      <div class="row">
+        <div class="col-3">
+          <button
+            mat-button
+            mat-raised-button
+            color="btn btn-primary"
+            [routerLink]="['/estaciones/editar', estacion.id]">
+            <mat-icon>edit</mat-icon>Editar
+          </button>
+        </div>
+
+        <div class="col-1"></div>
+
+        <div class="col-7">
+          <button
+          mat-button
+          mat-raised-button
+          color="accent"
+          [routerLink]="['/estaciones', estacion.id]">
+          <mat-icon>visibility</mat-icon>Ver detalles
+        </button>
+
+        </div>
+
+
+      </div>
+    </mat-card-actions>
+  </div>
+</div>

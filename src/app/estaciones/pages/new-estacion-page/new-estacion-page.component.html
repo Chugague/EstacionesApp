@@ -1,0 +1,116 @@
+<div class=" row container mt-5">
+  <div class="col-md-6">
+    <h1 class="mb-4">
+      {{ datosFormulario.id ? 'Editar radio ' + datosFormulario.nombre : 'Agregar nueva estación'}}
+    </h1>
+
+    <form [formGroup]="estacionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group mt-2">
+        <label for="nombre">Nombre de la Estación:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          placeholder="Nombre de la estación con máximo 200 caracteres"
+          formControlName="nombre">
+        <div *ngIf="estacionForm.get('nombre')?.invalid && (estacionForm.get('nombre')?.dirty || estacionForm.get('nombre')?.touched)">
+          <div *ngIf="estacionForm.get('nombre')?.errors">El nombre debe tener máximo 200 caracteres.</div>
+        </div>
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="frecuencia">Frecuencia:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="frecuencia"
+          placeholder="Ingrese la frecuencia de sintonía como 99.9"
+          formControlName="frecuencia">
+      </div>
+
+
+      <div class="form-group mt-2">
+        <label for="valoracion">Valoración:</label>
+        <input
+          type="number"
+          min="1" max="5"
+          class="form-control"
+          id="valoracion"
+          placeholder="Ingrese la valoración de la estación entre 1 y 5"
+          formControlName="valoracion">
+        <div *ngIf="estacionForm.get('valoracion')?.invalid && (estacionForm.get('valoracion')?.dirty || estacionForm.get('valoracion')?.touched)">
+          <div *ngIf="estacionForm.get('valoracion')?.errors || estacionForm.get('valoracion')?.errors">La valoración debe estar entre 1 y 5.</div>
+        </div>
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="fecha">Fecha que adquirió la suscripción:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fecha"
+          placeholder="Ingrese la fecha que adquirió la suscripción"
+          formControlName="fecha">
+      </div>
+
+      <div class="form-group form-check mt-2">
+        <input
+          type="checkbox"
+          class="form-check-input"
+          id="premium"
+          formControlName="premium">
+        <label class="form-check-label" for="premium">Suscripción Premium</label>
+      </div>
+
+      <div class="form-group mt-2">
+        <label for="alt_img">URL de imagen:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="alt_img"
+          placeholder="Ingresa una URL para agregar una imagen a la estación"
+          formControlName="alt_img">
+      </div>
+
+    </form>
+
+    <div class="d-flex align-items-center justify-content-center mt-3">
+
+      <button
+        class="btn btn-primary"
+        (click)="onSubmit()"
+        disabled="{{estacionForm.valid ? '' : 'disabled'}}"
+        >
+        <mat-icon style="vertical-align: middle;">save</mat-icon>
+        <span style="vertical-align: middle;" class="mx-1">Guardar</span>
+      </button>
+
+      <span class="margenNav"></span>
+
+      <button
+        *ngIf="datosFormulario.id; else cancelarButton"
+        class="btn btn-danger ml-2"
+        (click)="onBorrar()">
+        <mat-icon style="vertical-align: middle;">delete</mat-icon>
+        <span style="vertical-align: middle;" class="mx-1">Borrar</span>
+      </button>
+
+      <ng-template #cancelarButton>
+        <button
+          class="btn btn-secondary ml-2"
+          (click)="onCancelar()">
+          <mat-icon style="vertical-align: middle;">cancel</mat-icon>
+          <span style="vertical-align: middle;" class="mx-1">Cancelar</span>
+        </button>
+      </ng-template>
+
+    </div>
+
+  </div>
+  <div class="col-md-6">
+    <img
+      [src]="datosFormulario | ImagenEstacion"
+      class="img-fluid rounded border border-white"
+      alt="imagen del heroe">
+  </div>
+</div>

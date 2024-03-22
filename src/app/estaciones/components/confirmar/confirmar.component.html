@@ -1,0 +1,11 @@
+
+<h1 mat-dialog-title>Confirmar</h1>
+<div mat-dialog-content>
+  <p>¿Estas seguro que deseas borrar la estación radio {{data.nombre}}?</p>
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-success"(click)="onNoClick()">Cancelar</button>
+  <span class="margenNav"></span>
+  <button class="btn btn-danger" (click)="onConfirm()" cdkFocusInitial>Borrar</button>
+</div>
+

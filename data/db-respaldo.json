@@ -1,0 +1,84 @@
+{
+  "estaciones": [
+    {
+      "id": 1,
+      "nombre": "Cooperativa",
+      "frecuencia": 93.3,
+      "premium": true,
+      "valoracion": 4,
+      "fecha": "2008-04-19"
+    },
+    {
+      "id": 2,
+      "nombre": "ADN",
+      "frecuencia": 91.7,
+      "premium": true,
+      "valoracion": 4,
+      "fecha": "2010-01-19"
+    },
+    {
+      "id": 3,
+      "nombre": "Agricultura",
+      "frecuencia": 92.1,
+      "premium": false,
+      "valoracion": 3,
+      "fecha": "2012-04-19"
+    },
+    {
+      "id": 4,
+      "nombre": "BioBio",
+      "frecuencia": 99.7,
+      "premium": false,
+      "valoracion": 5,
+      "fecha": "2014-08-05"
+    },
+    {
+      "id": 5,
+      "nombre": "Carolina",
+      "frecuencia": 99.3,
+      "premium": true,
+      "valoracion": 4,
+      "fecha": "2017-12-07"
+    },
+    {
+      "id": 6,
+      "nombre": "Disney",
+      "frecuencia": 98.1,
+      "premium": false,
+      "valoracion": 3,
+      "fecha": "2018-02-15"
+    },
+    {
+      "id": 7,
+      "nombre": "Duna",
+      "frecuencia": 89.7,
+      "premium": true,
+      "valoracion": 4,
+      "fecha": "2002-01-25"
+    },
+    {
+      "id": 8,
+      "nombre": "Futuro",
+      "frecuencia": 88.9,
+      "premium": false,
+      "valoracion": 4,
+      "fecha": "2005-07-03"
+    },
+    {
+      "id": 9,
+      "nombre": "Pudahuel",
+      "frecuencia": 90.5,
+      "premium": false,
+      "valoracion": 3,
+      "fecha": "1998-01-03"
+    },
+    {
+      "id": 10,
+      "nombre": "Zero",
+      "frecuencia": 97.7,
+      "premium": true,
+      "valoracion": 3,
+      "fecha": "2002-10-17"
+    }
+  ]
+}
